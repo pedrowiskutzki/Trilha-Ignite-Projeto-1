@@ -1,7 +1,7 @@
 import styles from "./App.module.css";
 import { Header } from "./components/Header/Header";
-import { Post } from "./components/Post";
-import { Sidebar } from "./components/Sidebar";
+import { Post } from "./components/post/Post";
+import { Sidebar } from "./components/sidebar/Sidebar";
 import "./global.css";
 
 // author: {avatar_url: "", name: "", role: ""}
@@ -25,7 +25,7 @@ const posts = [
       },
       { type: "link", content: "jane.design/doctorcare" },
     ],
-    publishedAt: new Date("2023-02-24 09:12:20"),
+    publishedAt: new Date("2023-02-03 08:35:20"),
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const posts = [
       },
       { type: "link", content: "jane.design/doctorcare" },
     ],
-    publishedAt: new Date("2023-02-03 08:35:20"),
+    publishedAt: new Date("2023-01-31 09:12:20"),
   },
   {
     id: 3,
@@ -75,6 +75,7 @@ function App() {
           {posts.map((post) => {
             return (
               <Post
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
